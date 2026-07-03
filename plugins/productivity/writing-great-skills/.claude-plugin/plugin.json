@@ -1,0 +1,12 @@
+{
+  "name": "writing-great-skills",
+  "displayName": "Writing Great Skills",
+  "description": "Reference for writing and editing skills well — the vocabulary and principles that make a skill predictable.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Rodrigo Azevedo",
+    "email": "razevedo.contato@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": ["skills", "writing", "reference", "meta"]
+}

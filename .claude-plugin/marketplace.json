@@ -14,6 +14,15 @@
       "author": { "name": "Rodrigo Azevedo" },
       "category": "engineering",
       "keywords": ["requirements", "gap-analysis", "todo", "planning"]
+    },
+    {
+      "name": "writing-great-skills",
+      "source": "./plugins/productivity/writing-great-skills",
+      "description": "Reference for writing and editing skills well — the vocabulary and principles that make a skill predictable.",
+      "version": "1.0.0",
+      "author": { "name": "Rodrigo Azevedo" },
+      "category": "productivity",
+      "keywords": ["skills", "writing", "reference", "meta"]
     }
   ]
 }
