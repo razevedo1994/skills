@@ -1,28 +1,28 @@
 {
   "name": "personal-skills",
-  "description": "Rodrigo Azevedo's personal Agent Skills, each installable as an independent plugin.",
+  "description": "Rodrigo Azevedo's personal Agent Skills, grouped into one installable plugin per category.",
   "owner": {
     "name": "Rodrigo Azevedo",
     "email": "razevedo.contato@gmail.com"
   },
   "plugins": [
     {
-      "name": "requirements-gap-analysis",
-      "source": "./plugins/engineering/requirements-gap-analysis",
-      "description": "Compares project notes (e.g. CLAUDE.md) to the actual codebase and annotates gaps with TODO comments in the relevant source files.",
+      "name": "engineering",
+      "source": "./plugins/engineering",
+      "description": "Engineering-focused Agent Skills: requirements analysis, codebase auditing, and related workflows.",
       "version": "1.0.0",
       "author": { "name": "Rodrigo Azevedo" },
       "category": "engineering",
-      "keywords": ["requirements", "gap-analysis", "todo", "planning"]
+      "keywords": ["engineering", "requirements", "gap-analysis"]
     },
     {
-      "name": "writing-great-skills",
-      "source": "./plugins/productivity/writing-great-skills",
-      "description": "Reference for writing and editing skills well — the vocabulary and principles that make a skill predictable.",
+      "name": "productivity",
+      "source": "./plugins/productivity",
+      "description": "Productivity-focused Agent Skills: authoring aids and meta references for working effectively.",
       "version": "1.0.0",
       "author": { "name": "Rodrigo Azevedo" },
       "category": "productivity",
-      "keywords": ["skills", "writing", "reference", "meta"]
+      "keywords": ["productivity", "skills", "writing", "reference"]
     }
   ]
 }

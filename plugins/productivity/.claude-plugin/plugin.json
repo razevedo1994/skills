@@ -1,0 +1,12 @@
+{
+  "name": "productivity",
+  "displayName": "Productivity Skills",
+  "description": "Productivity-focused Agent Skills: authoring aids and meta references for working effectively.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Rodrigo Azevedo",
+    "email": "razevedo.contato@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": ["productivity", "skills", "writing", "reference"]
+}

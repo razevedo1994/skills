@@ -2,36 +2,49 @@
 
 A personal collection of [Agent Skills](https://code.claude.com/docs/en/skills) — reusable, model-invoked instructions that extend coding assistants with specialized workflows.
 
-This repo is a Claude Code **plugin marketplace** (`.claude-plugin/marketplace.json`): every skill lives in its own plugin under `plugins/<category>/`, so you can install just the ones you want instead of pulling in the whole collection.
+This repo is a Claude Code **plugin marketplace** (`.claude-plugin/marketplace.json`): skills are grouped by category, and each category is one installable plugin under `plugins/<category>/`, so you can install just the categories you want instead of pulling in the whole collection.
 
 ```
 .claude-plugin/
-  marketplace.json                       # lists every plugin in this repo
+  marketplace.json                 # lists every plugin (category) in this repo
 plugins/
   engineering/
-    requirements-gap-analysis/
-      .claude-plugin/plugin.json         # this plugin's manifest
-      skills/
-        requirements-gap-analysis/
-          SKILL.md                       # find gaps between docs and code
-          references/
-          evals/
+    .claude-plugin/plugin.json     # this category's plugin manifest
+    skills/
+      requirements-gap-analysis/
+        SKILL.md                   # find gaps between docs and code
+        references/
+        evals/
+  productivity/
+    .claude-plugin/plugin.json     # this category's plugin manifest
+    skills/
+      writing-great-skills/
+        SKILL.md                   # vocabulary/principles for writing skills
+        GLOSSARY.md
 ```
 
 Each skill folder contains a `SKILL.md` with YAML frontmatter (`name`, `description`) plus the instructions, and optional `references/` or `evals/` subfolders with supporting material.
 
+## Available skills
+
+| Category | Skill | Description |
+|---|---|---|
+| Engineering | [`requirements-gap-analysis`](plugins/engineering/skills/requirements-gap-analysis) | Compares project notes (e.g. `CLAUDE.md`) to the actual codebase and annotates gaps with `TODO` comments in the relevant source files. |
+| Productivity | [`writing-great-skills`](plugins/productivity/skills/writing-great-skills) | Reference for writing and editing skills well — the vocabulary and principles that make a skill predictable. User-invoked only. |
+
 ## Using with Claude Code
 
-**Install a single plugin from the marketplace (recommended)**
+**Install a category plugin from the marketplace (recommended)**
 
 1. Add this repo as a marketplace:
    ```
    /plugin marketplace add /path/to/skills
    ```
    Or, once published, `/plugin marketplace add <owner>/<repo>` or a Git/HTTPS URL.
-2. Install just the plugin(s) you want:
+2. Install the category (or categories) you want — installing one pulls in every skill under it:
    ```
-   /plugin install requirements-gap-analysis@personal-skills
+   /plugin install engineering@personal-skills
+   /plugin install productivity@personal-skills
    ```
 3. Restart or reload Claude Code. Run `/plugin marketplace update personal-skills` later to pick up new/updated skills.
 
@@ -45,7 +58,7 @@ Copy or symlink an individual skill folder into one of Claude Code's skill direc
 - Project-local: `<project>/.claude/skills/<skill-name>/`
 
 ```bash
-ln -s /path/to/skills/plugins/engineering/requirements-gap-analysis/skills/requirements-gap-analysis \
+ln -s /path/to/skills/plugins/engineering/skills/requirements-gap-analysis \
       ~/.claude/skills/requirements-gap-analysis
 ```
 
@@ -62,7 +75,7 @@ Zed supports Agent Skills the same way Claude Code does. Symlink or copy a skill
 opencode reads skills from `~/.config/opencode/skill/<skill-name>/SKILL.md` (global) or `.opencode/skill/<skill-name>/SKILL.md` (per-project). Copy or symlink a skill folder in, preserving its `SKILL.md` and any `references/`/`evals/` subfolders:
 
 ```bash
-ln -s /path/to/skills/plugins/engineering/requirements-gap-analysis/skills/requirements-gap-analysis \
+ln -s /path/to/skills/plugins/engineering/skills/requirements-gap-analysis \
       ~/.config/opencode/skill/requirements-gap-analysis
 ```
 
@@ -72,18 +85,19 @@ If your VS Code extension supports the Agent Skills format, copy or symlink the 
 
 ## Adding a new skill
 
-1. Create a new plugin directory: `plugins/<category>/<skill-name>/.claude-plugin/plugin.json`
+1. If the category doesn't exist yet, create its plugin manifest at `plugins/<category>/.claude-plugin/plugin.json`:
    ```json
    {
-     "name": "skill-name",
-     "displayName": "Human Readable Name",
-     "description": "What this skill does and when it's used.",
+     "name": "category-name",
+     "displayName": "Human Readable Category",
+     "description": "What this category of skills covers.",
      "version": "1.0.0",
      "author": { "name": "Rodrigo Azevedo", "email": "razevedo.contato@gmail.com" },
      "license": "MIT"
    }
    ```
-2. Add the skill itself at `plugins/<category>/<skill-name>/skills/<skill-name>/SKILL.md`:
+   and register it in `.claude-plugin/marketplace.json` with a `source` of `./plugins/<category>`.
+2. Add the skill at `plugins/<category>/skills/<skill-name>/SKILL.md`:
    ```yaml
    ---
    name: skill-name
@@ -94,7 +108,7 @@ If your VS Code extension supports the Agent Skills format, copy or symlink the 
    ---
    ```
    Write the workflow instructions in the body, and add supporting files under `references/` (loaded on demand) or `evals/` (test fixtures/cases).
-3. Register the plugin in `.claude-plugin/marketplace.json`, adding an entry to `plugins` with a matching `name`, `source` (`./plugins/<category>/<skill-name>`), `description`, and `version`.
+3. Bump the category plugin's `version` in both `plugins/<category>/.claude-plugin/plugin.json` and its entry in `.claude-plugin/marketplace.json` so existing installs pick up the new skill on update.
 
 ## License
 
