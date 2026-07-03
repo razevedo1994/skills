@@ -1,13 +1,12 @@
 ---
 name: requirements-gap-analysis
 description: >
-  This skill should be used when the user asks to "check what's missing",
-  "find gaps in the implementation", "analyze requirements vs code",
-  "compare CLAUDE.md to the codebase", "what have I not built yet",
-  "annotate missing features", or "add TODOs for unimplemented requirements".
-  Reads project notes (CLAUDE.md by default, or a file specified by the user)
-  and inserts TODO comments in source files wherever a documented requirement
-  is missing or only partially implemented.
+  Compares project notes (CLAUDE.md by default, or a file the user specifies)
+  against the codebase and inserts a TODO [GAP] comment in the most relevant
+  source file wherever a documented requirement is missing or only partially
+  implemented. Use when the user wants to find gaps between requirements and
+  code (e.g. "check what's missing", "what have I not built yet") or wants
+  those gaps annotated in source as TODOs.
 version: 1.0.0
 ---
 

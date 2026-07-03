@@ -67,26 +67,16 @@ Insert the TODO on the line immediately above the function, method, or class whe
 
 ---
 
-## TODO Comment Format
+## TODO Comment Text
 
-Always use this format (adjust comment syntax for the language):
+Keep the requirement text verbatim from the notes file — don't paraphrase. This makes it easy to grep for `TODO [GAP]` later and cross-reference with the source doc. See SKILL.md Step 4 for the comment format itself.
 
-```
-# TODO [GAP]: <exact requirement text> (source: <notes filename>)
-```
-
-Examples:
+Example of a `partial` annotation:
 ```python
 # TODO [GAP]: Passwords are hashed with bcrypt (source: CLAUDE.md)
 def hash_password(password):
     return hashlib.md5(password.encode()).hexdigest()
 ```
-
-```js
-// TODO [GAP]: Session expires after 30 minutes of inactivity (source: CLAUDE.md)
-```
-
-Keep the requirement text verbatim from the notes file — don't paraphrase. This makes it easy to grep for `TODO [GAP]` later and cross-reference with the source doc.
 
 ---
 
