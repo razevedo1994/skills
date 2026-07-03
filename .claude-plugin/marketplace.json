@@ -1,0 +1,19 @@
+{
+  "name": "personal-skills",
+  "description": "Rodrigo Azevedo's personal Agent Skills, each installable as an independent plugin.",
+  "owner": {
+    "name": "Rodrigo Azevedo",
+    "email": "razevedo.contato@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "requirements-gap-analysis",
+      "source": "./plugins/requirements-gap-analysis",
+      "description": "Compares project notes (e.g. CLAUDE.md) to the actual codebase and annotates gaps with TODO comments in the relevant source files.",
+      "version": "1.0.0",
+      "author": { "name": "Rodrigo Azevedo" },
+      "category": "engineering",
+      "keywords": ["requirements", "gap-analysis", "todo", "planning"]
+    }
+  ]
+}
