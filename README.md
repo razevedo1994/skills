@@ -32,6 +32,7 @@ Each skill folder contains a `SKILL.md` with YAML frontmatter (`name`, `descript
 | Engineering | [`requirements-gap-analysis`](plugins/engineering/skills/requirements-gap-analysis) | Compares project notes (e.g. `CLAUDE.md`) to the actual codebase and annotates gaps with `TODO` comments in the relevant source files. |
 | Engineering | [`domain-modeling`](plugins/engineering/skills/domain-modeling) | Builds and sharpens a project's domain model as you design: challenges terminology, stress-tests scenarios, and records the glossary (`CONTEXT.md`) and ADRs as decisions crystallise. |
 | Engineering | [`grill-with-docs`](plugins/engineering/skills/grill-with-docs) | Runs a `grilling` interview while using `domain-modeling` to capture docs as you go. User-invoked only; requires both the `engineering` and `productivity` plugins. |
+| Engineering | [`conformance-review`](plugins/engineering/skills/conformance-review) | Reviews a diff against documented standards (`CLAUDE.md`/`CONTRIBUTING.md`), documented spec (`CONTEXT.md`/ADRs), and code smells — three parallel sub-agent passes reported side by side. |
 | Productivity | [`writing-great-skills`](plugins/productivity/skills/writing-great-skills) | Reference for writing and editing skills well — the vocabulary and principles that make a skill predictable. User-invoked only. |
 | Productivity | [`grilling`](plugins/productivity/skills/grilling) | Interviews the user relentlessly, one question at a time with a recommended answer, to stress-test a plan or design before building. |
 
