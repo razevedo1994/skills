@@ -9,20 +9,20 @@
     {
       "name": "engineering",
       "source": "./plugins/engineering",
-      "description": "Engineering-focused Agent Skills: requirements analysis, codebase auditing, and related workflows.",
-      "version": "1.0.0",
+      "description": "Engineering-focused Agent Skills: requirements analysis, codebase auditing, domain modeling, and related workflows.",
+      "version": "1.1.0",
       "author": { "name": "Rodrigo Azevedo" },
       "category": "engineering",
-      "keywords": ["engineering", "requirements", "gap-analysis"]
+      "keywords": ["engineering", "requirements", "gap-analysis", "domain-modeling"]
     },
     {
       "name": "productivity",
       "source": "./plugins/productivity",
       "description": "Productivity-focused Agent Skills: authoring aids and meta references for working effectively.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": { "name": "Rodrigo Azevedo" },
       "category": "productivity",
-      "keywords": ["productivity", "skills", "writing", "reference"]
+      "keywords": ["productivity", "skills", "writing", "reference", "grilling"]
     }
   ]
 }
