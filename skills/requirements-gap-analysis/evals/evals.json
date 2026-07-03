@@ -1,0 +1,35 @@
+{
+  "skill_name": "requirements-gap-analysis",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Check what's missing in my implementation. Use evals/fixtures/CLAUDE.md as the notes file and evals/fixtures/src/app.py as the codebase.",
+      "expected_output": "Three TODOs added (one partial, two missing) and one requirement correctly identified as implemented. No TODO added for create_task or complete_task.",
+      "files": [
+        "evals/fixtures/CLAUDE.md",
+        "evals/fixtures/src/app.py"
+      ],
+      "expectations": [
+        "A TODO [GAP] comment is inserted above or near hash_password because bcrypt is not used (partial)",
+        "A TODO [GAP] comment is inserted for the email notification requirement (missing)",
+        "No TODO is added for 'Users can create tasks' because create_task exists",
+        "No TODO is added for 'Tasks can be marked as complete' because complete_task exists",
+        "A summary table is printed listing all four requirements with their status"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Find gaps in my implementation by comparing evals/fixtures/CLAUDE.md to evals/fixtures/src/app.py.",
+      "expected_output": "The partial requirement (bcrypt) is classified as partial, not missing, because hash_password exists even though it uses MD5.",
+      "files": [
+        "evals/fixtures/CLAUDE.md",
+        "evals/fixtures/src/app.py"
+      ],
+      "expectations": [
+        "hash_password is classified as 'partial', not 'missing'",
+        "The TODO for hash_password is placed on the line above the hash_password function definition",
+        "The TODO comment text references bcrypt and cites CLAUDE.md as the source"
+      ]
+    }
+  ]
+}
