@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "requirements-gap-analysis",
-      "source": "./plugins/requirements-gap-analysis",
+      "source": "./plugins/engineering/requirements-gap-analysis",
       "description": "Compares project notes (e.g. CLAUDE.md) to the actual codebase and annotates gaps with TODO comments in the relevant source files.",
       "version": "1.0.0",
       "author": { "name": "Rodrigo Azevedo" },
