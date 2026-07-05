@@ -35,6 +35,7 @@ Each skill folder contains a `SKILL.md` with YAML frontmatter (`name`, `descript
 | Engineering | [`conformance-review`](plugins/engineering/skills/conformance-review) | Reviews a diff against documented standards (`CLAUDE.md`/`CONTRIBUTING.md`), documented spec (`CONTEXT.md`/ADRs), and code smells — three parallel sub-agent passes reported side by side. |
 | Productivity | [`writing-great-skills`](plugins/productivity/skills/writing-great-skills) | Reference for writing and editing skills well — the vocabulary and principles that make a skill predictable. User-invoked only. |
 | Productivity | [`grilling`](plugins/productivity/skills/grilling) | Interviews the user relentlessly, one question at a time with a recommended answer, to stress-test a plan or design before building. |
+| Productivity | [`teach`](plugins/productivity/skills/teach) | Runs a persistent, multi-session teaching workspace — mission, resources, lessons, glossary, and learning records — to teach the user a topic over time. User-invoked only. |
 
 ## Using with Claude Code
 
